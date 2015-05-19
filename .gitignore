@@ -1,20 +1,12 @@
-/blib/
-/.build/
-_build/
-cover_db/
-inc/
-Build
-!Build/
-Build.bat
-.last_cover_stats
-/Makefile
-/Makefile.old
-/MANIFEST.bak
-/META.yml
-/META.json
-/MYMETA.*
-nytprof.out
-/pm_to_blib
-*.o
-*.bs
-/_eumm/
+#first of all, it is necessary to Upgrade CPAN, which is a installation method 
+>perl -MCPAN -e shell
+cpan>install Bundle::CPAN
+cpan>install Module::Build
+cpan>o conf prefer_installer MB
+cpan>o conf commit
+cpan>q
+
+#then Installing using CPAN
+>perl -MCPAN -e shell
+cpan>d /bioperl/
+cpan>force install CJFIELDS/BioPerl-1.6.923.tar.gz
